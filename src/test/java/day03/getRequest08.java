@@ -43,6 +43,7 @@ public class getRequest08 extends GMIBankBaseUrl {
 
         //send the request and get the response
         Response response=given().spec(spec).headers("Authorization", "Bearer "+generateToken()).when().get("/{first}/{second}");
+        response.prettyPrint();
 
         //do assertion
         Map<String, Object> actualData=response.as(HashMap.class);
